@@ -21,17 +21,17 @@ namespace Student_Praktica
     public partial class PageShowStudent : Page
     {
         public static List<Student> students { get; set; }
-        Group group1 = new Group();
+       
         public PageShowStudent()
         {
             InitializeComponent();
-            refresh(Group group);
+            refresh();
         }
 
 
-        private void refresh(Group group)
+        private void refresh()
         {
-            group1 = group;
+            
             students = new List<Student>(App.Connection.Student.Where(i => i.ID == group1.ID).ToList());
             ListApp.ItemsSource = students.ToList();
             LblCounter.Content = students.Count;

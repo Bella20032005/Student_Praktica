@@ -20,25 +20,24 @@
             <RowDefinition Height="20*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Margin="36,205,10,10">
             <Label Content="поиск"/>
             <TextBox x:Name="TxtSerch" TextChanged="TxtSerch_TextChanged"/>
             <Button Content="по ФИО" Click="Button_Click_Order_by_Fio" />
             <Button Content="по номеру" Click="Button_Click_Order_by_Phone" />
-                <ComboBox x:Name="CMBTarget" SelectionChanged="CMBTarget_SelectionChanged">
+            <ComboBox x:Name="CMBTarget" SelectionChanged="CMBTarget_SelectionChanged">
                 <ComboBoxItem Content="Очно"/>
                 <ComboBoxItem Content="Заочно"/>
                 <ComboBoxItem Content="все"/>
             </ComboBox>
             <Label x:Name="LblCounter"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="1" Grid.Column="2">
-            <ListView x:Name="ListApp">
+        <ScrollViewer Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="0,0,0,210">
+            <ListView x:Name="ListApp" Width="585">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
-                                <Label Content="{Binding ID_Department}" ContentStringFormat="ФИО: {0}" />
                                 <Label Content="{Binding Name}" ContentStringFormat="Имя: {0}"/>
                                 <Label Content="{Binding Patromic}" ContentStringFormat="Фамилия: {0}"/>
                                 <Label Content="{Binding Surname}" ContentStringFormat="Отчество: {0}"/>

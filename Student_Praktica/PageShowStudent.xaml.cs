@@ -21,20 +21,23 @@ namespace Student_Praktica
     public partial class PageShowStudent : Page
     {
         public static List<Student> students { get; set; }
-       
-        public PageShowStudent()
+        Student student1 = new Student();
+        Group group1 = new Group();
+        public PageShowStudent(Group group)
         {
             InitializeComponent();
+            group1 = group;
             refresh();
+            this.DataContext = this;
         }
-
 
         private void refresh()
         {
             
-            students = new List<Student>(App.Connection.Student.Where(i => i.ID == group1.ID).ToList());
-            ListApp.ItemsSource = students.ToList();
+            ListApp.ItemsSource = App.Connection.Student.Where(i => i.ID_Group == group1.ID).ToList();
+            students = new List<Student>();
             LblCounter.Content = students.Count;
+            this.DataContext = this;
         }
         private void Button_Click_Order_by_Fio(object sender, RoutedEventArgs e)
         {

@@ -14,7 +14,7 @@
                 <DataTemplate>
                     <StackPanel >
                         <Label Content="{Binding ID}"/>
-                        <Label Content="{Binding Profession_Name}"/>
+                        <Label Content="{Binding Department.Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

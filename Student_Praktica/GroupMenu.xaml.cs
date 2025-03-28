@@ -32,12 +32,13 @@ namespace Student_Praktica
 
         private void ListGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var _sel = App.Connection.Group.ToList();
+            var _sel = ListGroup.SelectedItem as Group;
+
             if (_sel != null)
             {
                 if (ListGroup.SelectedItem != null)
                 {
-                NavigationService.Navigate(new PageShowStudent(_sel));
+                    NavigationService.Navigate(new PageShowStudent(_sel));
                 }
             }
                

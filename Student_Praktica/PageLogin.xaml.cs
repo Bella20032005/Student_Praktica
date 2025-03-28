@@ -42,16 +42,16 @@ namespace Student_Praktica
                         MessageBox.Show($"Добро пожаловать");
                          NavigationService.Navigate(new GroupMenu(_sel));
                     }
-                    if (_sel.ID_Role == 2)
+                    if (_sel.ID_Role == 2 )
                     {
-                        NavigationService.Navigate(new AdminGroupMenu());
+                        NavigationService.Navigate(new AdminMenuPage());
                     }
 
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("No");
+                MessageBox.Show("Неправильные данные");
             }
 
         }
